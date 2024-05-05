@@ -25,13 +25,18 @@ public class Semana_8 {
     
     // Método para calcular el salario devengado
     public static double calcularSalarioDevengado(int salarioBase, int horasTrabajo, int horasExtras) {
-        // Implementar solución
-        return 0;
+        double salarioHora = salarioBase / horasTrabajo;
+        double salarioHorasExtras = salarioHora * horasExtras;
+        return salarioBase + salarioHorasExtras;
     }
 
     // Método para calcular las deducciones
     public static double calcularDeducciones(double salarioDevengado, double auxilioTransporte) {
-        // Implementar solución
-        return 0;
+        double porcentajeDeducciones = 0.10; // Supongamos un 10% de deducciones
+        double deducciones = salarioDevengado * porcentajeDeducciones;
+        if (salarioDevengado >= 2600000) { // dejara de recibir auxilio de trasporte cuando gane mayor o igual a dos millones seiscientos mil 
+            deducciones += auxilioTransporte;
+        }
+        return deducciones;
     }
 }
